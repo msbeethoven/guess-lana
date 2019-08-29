@@ -3,10 +3,15 @@ const express = require('express');
 const app = express();
 const morgan = require('morgan');
 
+const dotenv = require('dotenv');
+dotenv.config();
+
 app.use(morgan('dev'));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.use('/api.genius.com', require('./api')) ;
 
 app.use(express.static(path.join(__dirname, '../public')));
 

@@ -2,14 +2,13 @@
   "name": "lana-del-rey",
   "version": "1.0.0",
   "description": "",
-  "main": "client/app.js",
+  "main": "client/index.js",
   "scripts": {
     "build-client": "webpack",
     "build-client-watch": "webpack -w",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server",
-    "start-dev": "webpack -w & nodemon server",
-    "deploy": "script/deploy",
+    "start-dev": "NODE_ENV='development' & webpack -w & nodemon server",
     "start-server": "nodemon server -e html,js,scss --ignore public --ignore"
   },
   "author": "",
@@ -17,14 +16,15 @@
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
     "@babel/preset-env": "^7.4.5",
+    "axios": "^0.19.0",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "morgan": "^1.9.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-redux": "^7.1.0",
+    "react-redux": "^7.1.1",
     "react-router-dom": "^5.0.1",
-    "redux": "^4.0.1",
+    "redux": "^4.0.4",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0"
   },
@@ -32,6 +32,9 @@
     "@babel/core": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
+    "dotenv": "^8.1.0",
+    "style-loader": "^1.0.0",
     "webpack": "^4.35.2",
     "webpack-cli": "^3.3.5"
   }
